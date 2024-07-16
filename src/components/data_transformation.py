@@ -17,7 +17,7 @@ from src.utils import save_object
 import os
 
 class DataTransformationConfig:
-    preprocessor_obj_file_path = os.path.join('artifacts','preprocessor.pkl')
+    preprocessor_obj_file_path = os.path.join('artifacts','preprocessor3.pkl')
     
 class DataTransformation:
     def __init__(self):
@@ -36,26 +36,25 @@ class DataTransformation:
             
             num_pipeline = Pipeline(
                 steps=[
-                    ('Imputer', SimpleImputer(strategy='median')),
-                    ('scaler', StandardScaler())
+                    ('imputer', SimpleImputer(strategy='median')),
+                    ('scaler', StandardScaler(with_mean=False))
                 ]
             )
             
             cat_pipeline = Pipeline(
                 steps=[
-                    ('Imputer', SimpleImputer(strategy='most_frequent')),
-                    ('one_hot_encoder', OneHotEncoder()),
-                    ('scaler', StandardScaler(with_mean = False))
+                    ('imputer', SimpleImputer(strategy='most_frequent')),
+                    ('one_hot_encoder', OneHotEncoder(handle_unknown='ignore')),
                 ]
             )
             
-            logging.info('categorical columns:{categorical_columns}')
-            logging.info('numerical columns:{numerical_columns}')
+            logging.info(f'Categorical columns:{categorical_columns}')
+            logging.info(f'Numerical columns:{numerical_columns}')
             
             preprocessor=ColumnTransformer(
                 [
                     ('num_pipeline',num_pipeline, numerical_columns),
-                    ('cat_pipeline', cat_pipeline, categorical_columns)
+                    ('cat_pipelines', cat_pipeline, categorical_columns)
                 ]
             )
             
@@ -95,7 +94,7 @@ class DataTransformation:
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
             
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
-            logging.info("Saved processing object.")
+            logging.info("Saved preprocessing object.")
             
             save_object(
                 file_path = self.data_transformation_config.preprocessor_obj_file_path,
