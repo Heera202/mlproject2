@@ -401,7 +401,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - [YourGitHub](https://github.com/yourusername)
+- **Name** - *Initial work* - [YourGitHub](https://github.com/Heera202)
 
 ## 🙏 Acknowledgments
 
@@ -414,12 +414,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or feedback, please reach out:
 
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **Email**:  iamvictormoshahary@gmail.com
+- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/deputy-mashahary-48b304248)
 
 ---
 
-⭐ If you found this project helpful, please give it a star!
 
-Made with ❤️ and Python
+
