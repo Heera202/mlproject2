@@ -98,11 +98,6 @@ student-performance-predictor/
 
 ### Step 1: Clone the Repository
 
-```bash
-git clone https://github.com/yourusername/student-performance-predictor.git
-cd student-performance-predictor
-```
-
 ### Step 2: Create Virtual Environment
 
 ```bash
